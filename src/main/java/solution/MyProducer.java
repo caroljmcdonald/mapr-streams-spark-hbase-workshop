@@ -23,7 +23,7 @@ public class MyProducer {
         }
 
         String topic =  args[0] ;
-        System.out.println("Publishing to to : "+ topic);
+        System.out.println("Publishing to topic: "+ topic);
 
         configureProducer();
         File f = new File("./data/sensordata.csv");
