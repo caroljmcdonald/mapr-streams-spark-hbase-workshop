@@ -67,11 +67,11 @@
   unzip mapr-streams-spark-hbase-workshop-master.zip
 </pre>
 
-Copy the data into a new folder
+Copy the data into a new folder under in the distributed cluster storage partition
 <pre>
-  mkdir data
+  mkdir /mapr/demo.mapr.com/user/data
 
-  cp ./mapr-streams-spark-hbase-workshop-master/data/* ./data/
+  cp ~/mapr-streams-spark-hbase-workshop-master/data/* /mapr/demo.mapr.com/user/data/
 </pre>
 
 <p>
@@ -296,7 +296,7 @@ alertRDD.take(3).foreach(println)
           Group the values by sensor and date and get some stats using <a href="https://spark.apache.org/docs/1.4.1/api/scala/index.html#org.apache.spark.util.StatCounter" target="_workshop">StatCounter</a> class
         </li>
         <li>
-          Then print the 3 first values of the new stats RDD
+          Then print the 5 first values of the new stats RDD
         </li>
       </ol>
 <pre>
@@ -429,7 +429,7 @@ sensorStatDF.take(5).foreach(println)
   <br/><br/>
   <h4>Summary</h4>
   <div>
-    In this section you have learn how to use the Spark Shell and API to read a CSV file, and create RDDs from String or Classes, and finally use the DataFrame and SparkSQL API to analyze the data.
+    In this section you have learned how to use the Spark Shell and API to read a CSV file, and create RDDs from String or Classes, and finally use the DataFrame and SparkSQL API to analyze the data.
 
     <br/><br/>
     In the next section you will use the same data source but use the Streaming API.
@@ -449,13 +449,13 @@ sensorStatDF.take(5).foreach(println)
 
 
         <p>
-          Spark Streaming supports data sources such as Directories, HDFS directories, TCP sockets, Kafka, Flume, Twitter, etc. Data Streams can be processed with Spark’s core APIS, DataFrames SQL, or machine learning APIs, and can be persisted to a filesystem, HDFS, databases, or any data source offering a Hadoop OutputFormat.
+          Spark Streaming supports data sources such as Directories, HDFS directories, TCP sockets, Kafka, Flume, Twitter, etc. Data Streams can be processed with Spark’s core APIs, DataFrames SQL, or machine learning APIs, and can be persisted to a filesystem, HDFS, databases, or any data source offering a Hadoop OutputFormat.
           <br/>
           <img src="./assets/images/009.png"/>
         </p>
 
         <p>
-          Depending of your application you will chose the source. In this example we can imagine that the various sensor are pushing new files in a directory, and each time the application will capture it automatically.
+          Depending of your application you will chose the source. In this example we can imagine that the various sensors are pushing new files in a directory, and each time the application will capture it automatically.
         </p>
 
 
